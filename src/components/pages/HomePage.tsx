@@ -10,6 +10,8 @@ import { CTASection } from "@/components/ui/CTASection";
 import { FadeIn, StaggerItem } from "@/components/ui/FadeIn";
 import { services } from "@/lib/data/services";
 import { caseStudies } from "@/lib/data/case-studies";
+import { testimonials } from "@/lib/data/testimonials";
+import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import {
   capabilities,
   creativeTechnology,
@@ -180,6 +182,28 @@ export function HomePage() {
             {caseStudies.map((study, i) => (
               <StaggerItem key={study.slug} index={i}>
                 <CaseStudyCard study={study} />
+              </StaggerItem>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Testimonials */}
+      <section className="border-t border-border bg-background py-20 sm:py-28">
+        <Container>
+          <FadeIn>
+            <SectionHeading
+              eyebrow="Testimonials"
+              title="What clients say"
+              description="Real feedback from teams we&apos;ve helped deliver modern web, AI, and software systems."
+              align="center"
+              className="mx-auto"
+            />
+          </FadeIn>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {testimonials.map((t, i) => (
+              <StaggerItem key={t.name} index={i}>
+                <TestimonialCard quote={t.quote} name={t.name} title={t.title} />
               </StaggerItem>
             ))}
           </div>
