@@ -1,5 +1,6 @@
 import type { CaseStudy } from "@/lib/data/case-studies";
 import { cn } from "@/lib/utils";
+import { ExternalLink } from "lucide-react";
 
 type CaseStudyCardProps = {
   study: CaseStudy;
@@ -25,6 +26,20 @@ export function CaseStudyCard({ study, className }: CaseStudyCardProps) {
         <p className="mt-3 flex-1 text-muted-foreground leading-relaxed">
           {study.summary}
         </p>
+
+        {study.publicUrl && (
+          <a
+            href={study.publicUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+            aria-label={`Visit ${study.title} website`}
+          >
+            Visit project
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        )}
+
         <div className="mt-auto flex flex-wrap gap-2">
           {study.technologies.slice(0, 4).map((tech) => (
             <span
@@ -63,6 +78,21 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
           {study.title}
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">{study.summary}</p>
+
+        {study.publicUrl && (
+          <div className="mt-6">
+            <a
+              href={study.publicUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+              aria-label={`Visit ${study.title} website`}
+            >
+              Visit project
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </div>
+        )}
 
         <div className="mt-10 grid items-stretch gap-8 sm:grid-cols-2">
           {sections.map((section) => (
