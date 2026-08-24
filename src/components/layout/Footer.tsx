@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { LogoMark } from "@/components/ui/LogoMark";
+import { Logo } from "@/components/ui/Logo";
 import { FOOTER_SERVICES, NAV_LINKS, SITE } from "@/lib/constants";
 
 export function Footer() {
@@ -14,7 +14,7 @@ export function Footer() {
               className="inline-flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               aria-label={`${SITE.name} home`}
             >
-              <LogoMark size={36} className="h-9 w-9" />
+              <Logo />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {SITE.description}

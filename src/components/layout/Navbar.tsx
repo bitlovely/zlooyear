@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { LogoMark } from "@/components/ui/LogoMark";
+import { Logo } from "@/components/ui/Logo";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -48,7 +48,7 @@ export function Navbar() {
             className="inline-flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             aria-label={`${SITE.name} home`}
           >
-            <LogoMark size={36} className="h-9 w-9" priority />
+            <Logo priority />
           </Link>
 
           <div className="hidden items-center gap-8 lg:flex">
