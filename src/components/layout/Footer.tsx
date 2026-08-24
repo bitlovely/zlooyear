@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { FOOTER_SERVICES, NAV_LINKS, SITE } from "@/lib/constants";
+import { Github, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -70,26 +71,6 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href={SITE.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href={SITE.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
                 <Link
                   href="/contact"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -105,9 +86,29 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             &copy; 2026 {SITE.name}. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground">
-            {SITE.tagline}
-          </p>
+          <div className="flex flex-wrap items-center justify-between gap-3 sm:justify-end">
+            <p className="text-sm text-muted-foreground">{SITE.tagline}</p>
+            <div className="flex items-center gap-3" aria-label="Social links">
+              <a
+                href={SITE.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex rounded-lg p-2 text-muted-foreground transition-colors hover:text-foreground hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a
+                href={SITE.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex rounded-lg p-2 text-muted-foreground transition-colors hover:text-foreground hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                aria-label="GitHub"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </Container>
     </footer>
