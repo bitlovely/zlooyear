@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { FOOTER_SERVICES, NAV_LINKS, SITE } from "@/lib/constants";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Slack } from "lucide-react";
 
 export function Footer() {
   return (
@@ -106,6 +106,15 @@ export function Footer() {
                 aria-label="GitHub"
               >
                 <Github className="h-4 w-4" />
+              </a>
+              <a
+                href={SITE.slack}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex rounded-lg p-2 text-muted-foreground transition-colors hover:text-foreground hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                aria-label="Slack"
+              >
+                <Slack className="h-4 w-4" />
               </a>
             </div>
           </div>

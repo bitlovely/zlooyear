@@ -5,6 +5,7 @@ export const SITE = {
   email: "hello@zlooyear.com",
   linkedin: "https://www.linkedin.com/company/zlooyear",
   github: "https://github.com/zlooyear",
+  slack: "https://join.slack.com/t/zlooyear/shared_invite/placeholder",
   tagline: "Adapting to the Technology of the 2100s.",
   motto: "Build for today. Adapt for what comes next.",
   description:

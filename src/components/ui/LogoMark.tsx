@@ -10,7 +10,7 @@ type LogoMarkProps = {
 export function LogoMark({ className, size = 32, priority = false }: LogoMarkProps) {
   return (
     <Image
-      src="/brand/logo-mark.png"
+      src="/brand/logo-mark.png?v=2"
       alt=""
       width={size}
       height={size}
