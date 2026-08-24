@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -41,6 +42,7 @@ export function Navbar() {
           : "bg-background/80 backdrop-blur-sm",
       )}
     >
+      <AnnouncementBar />
       <Container as="nav" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between lg:h-[4.5rem]">
           <Link
@@ -88,7 +90,7 @@ export function Navbar() {
       {/* Mobile menu */}
       <div
         className={cn(
-          "fixed inset-0 top-16 z-40 lg:hidden transition-opacity duration-200",
+          "absolute inset-x-0 top-full z-40 h-screen lg:hidden transition-opacity duration-200",
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none",
