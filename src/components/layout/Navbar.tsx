@@ -5,7 +5,8 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { NAV_LINKS } from "@/lib/constants";
+import { LogoMark } from "@/components/ui/LogoMark";
+import { NAV_LINKS, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -44,9 +45,10 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between lg:h-[4.5rem]">
           <Link
             href="/"
-            className="text-lg font-bold tracking-tight text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+            className="inline-flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            aria-label={`${SITE.name} home`}
           >
-            ZLOOYEAR
+            <LogoMark size={36} className="h-9 w-9" priority />
           </Link>
 
           <div className="hidden items-center gap-8 lg:flex">
