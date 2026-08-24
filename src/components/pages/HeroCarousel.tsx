@@ -32,11 +32,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
 
   return (
     <div className="relative">
-      <p className="text-sm font-medium tracking-wide text-accent uppercase">
-        {SITE.name}
-      </p>
-
-      <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1] text-balance">
+      <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1] text-balance">
         {SITE.tagline}
       </h1>
 

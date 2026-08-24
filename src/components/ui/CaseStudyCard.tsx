@@ -32,7 +32,7 @@ export function CaseStudyCard({ study, className }: CaseStudyCardProps) {
             href={study.publicUrl}
             target="_blank"
             rel="noreferrer"
-            className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
             aria-label={`Visit ${study.title} website`}
           >
             Visit project
@@ -40,7 +40,7 @@ export function CaseStudyCard({ study, className }: CaseStudyCardProps) {
           </a>
         )}
 
-        <div className="mt-auto flex flex-wrap gap-2">
+        <div className="mt-8 flex flex-wrap gap-2">
           {study.technologies.slice(0, 4).map((tech) => (
             <span
               key={tech}

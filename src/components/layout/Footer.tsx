@@ -28,7 +28,7 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-foreground">Navigation</h3>
             <ul className="mt-4 space-y-3">
-              {[...NAV_LINKS, { label: "Contact", href: "/contact" }].map(
+              {NAV_LINKS.map(
                 (link) => (
                   <li key={link.href}>
                     <Link
