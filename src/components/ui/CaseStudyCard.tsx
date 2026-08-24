@@ -10,7 +10,7 @@ export function CaseStudyCard({ study, className }: CaseStudyCardProps) {
   return (
     <article
       className={cn(
-        "flex flex-col rounded-2xl border border-border bg-surface overflow-hidden",
+        "flex h-full flex-col rounded-2xl border border-border bg-surface overflow-hidden",
         className,
       )}
     >
@@ -25,7 +25,7 @@ export function CaseStudyCard({ study, className }: CaseStudyCardProps) {
         <p className="mt-3 flex-1 text-muted-foreground leading-relaxed">
           {study.summary}
         </p>
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-auto flex flex-wrap gap-2">
           {study.technologies.slice(0, 4).map((tech) => (
             <span
               key={tech}
@@ -64,9 +64,12 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">{study.summary}</p>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-2">
+        <div className="mt-10 grid items-stretch gap-8 sm:grid-cols-2">
           {sections.map((section) => (
-            <div key={section.label}>
+            <div
+              key={section.label}
+              className="flex h-full flex-col rounded-xl border border-border bg-background p-5 sm:p-6"
+            >
               <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide">
                 {section.label}
               </h3>

@@ -84,11 +84,11 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {beliefs.map((belief, i) => (
               <StaggerItem key={belief.title} index={i}>
-                <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
+                <div className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6 sm:p-8">
                   <h3 className="text-lg font-semibold text-foreground">
                     {belief.title}
                   </h3>
-                  <p className="mt-3 text-muted-foreground leading-relaxed">
+                  <p className="mt-3 flex-1 text-muted-foreground leading-relaxed">
                     {belief.description}
                   </p>
                 </div>
@@ -132,11 +132,11 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {whyZlooyear.map((item, i) => (
               <StaggerItem key={item.title} index={i}>
-                <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
+                <div className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6 sm:p-8">
                   <h3 className="text-lg font-semibold text-foreground">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-muted-foreground leading-relaxed">
+                  <p className="mt-3 flex-1 text-muted-foreground leading-relaxed">
                     {item.description}
                   </p>
                 </div>

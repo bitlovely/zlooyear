@@ -16,7 +16,7 @@ export function ProcessStep({
   isLast = false,
 }: ProcessStepProps) {
   return (
-    <div className={cn("relative flex flex-col", className)}>
+    <div className={cn("relative flex h-full flex-col", className)}>
       <div className="flex items-center gap-4">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-sm font-semibold text-accent">
           {number}
@@ -29,7 +29,7 @@ export function ProcessStep({
         )}
       </div>
       <h3 className="mt-4 text-lg font-semibold text-foreground">{title}</h3>
-      <p className="mt-2 text-muted-foreground leading-relaxed">{description}</p>
+      <p className="mt-2 flex-1 text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }

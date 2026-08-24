@@ -117,14 +117,14 @@ export function HomePage() {
               const Icon = iconMap[cap.icon];
               return (
                 <StaggerItem key={cap.title} index={i}>
-                  <div className="rounded-2xl border border-border bg-background p-6 transition-colors hover:border-border-strong">
+                  <div className="flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-colors hover:border-border-strong">
                     {Icon && (
                       <Icon className="h-5 w-5 text-accent" strokeWidth={1.75} />
                     )}
                     <h3 className="mt-4 font-semibold text-foreground">
                       {cap.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                       {cap.description}
                     </p>
                   </div>
@@ -226,11 +226,11 @@ export function HomePage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {whyZlooyear.map((item, i) => (
               <StaggerItem key={item.title} index={i}>
-                <div className="rounded-2xl border border-border bg-background p-6 sm:p-8">
+                <div className="flex h-full flex-col rounded-2xl border border-border bg-background p-6 sm:p-8">
                   <h3 className="text-lg font-semibold text-foreground">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-muted-foreground leading-relaxed">
+                  <p className="mt-3 flex-1 text-muted-foreground leading-relaxed">
                     {item.description}
                   </p>
                 </div>

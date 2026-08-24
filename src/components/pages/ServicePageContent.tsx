@@ -65,7 +65,7 @@ export function ServicePageContent({ service }: ServicePageContentProps) {
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {service.provides.map((item, i) => (
               <StaggerItem key={item} index={i}>
-                <div className="flex items-start gap-3 rounded-xl border border-border bg-surface p-5">
+                <div className="flex h-full items-start gap-3 rounded-xl border border-border bg-surface p-5">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   <span className="text-foreground">{item}</span>
                 </div>
@@ -141,7 +141,7 @@ export function ServicePageContent({ service }: ServicePageContentProps) {
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {service.useCases.map((item, i) => (
               <StaggerItem key={item} index={i}>
-                <div className="rounded-xl border border-border bg-background p-5 text-muted-foreground">
+                <div className="h-full rounded-xl border border-border bg-background p-5 text-muted-foreground">
                   {item}
                 </div>
               </StaggerItem>

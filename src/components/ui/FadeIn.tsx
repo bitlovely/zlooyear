@@ -50,7 +50,7 @@ export function StaggerItem({
   const prefersReducedMotion = useReducedMotion();
 
   if (prefersReducedMotion) {
-    return <div className={className}>{children}</div>;
+    return <div className={cn("h-full", className)}>{children}</div>;
   }
 
   return (
@@ -63,7 +63,7 @@ export function StaggerItem({
         delay: index * 0.08,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={className}
+      className={cn("h-full", className)}
     >
       {children}
     </motion.div>

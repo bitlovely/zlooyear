@@ -13,7 +13,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
     <Link
       href={service.href}
       className={cn(
-        "group flex flex-col rounded-2xl border border-border bg-surface p-6 sm:p-8 transition-all duration-200 hover:border-border-strong hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
+        "group flex h-full flex-col rounded-2xl border border-border bg-surface p-6 sm:p-8 transition-all duration-200 hover:border-border-strong hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
         className,
       )}
     >
@@ -24,7 +24,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
       <p className="mt-3 flex-1 text-muted-foreground leading-relaxed">
         {service.description}
       </p>
-      <ul className="mt-6 space-y-2">
+      <ul className="mt-6 flex-1 space-y-2">
         {service.capabilities.slice(0, 4).map((cap) => (
           <li
             key={cap}
