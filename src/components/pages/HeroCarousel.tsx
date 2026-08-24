@@ -29,27 +29,31 @@ export function HeroCarousel() {
 
   return (
     <section className="relative overflow-hidden bg-[#0b0b0c] text-white">
-      <div className="mx-auto grid min-h-[32rem] w-full max-w-6xl items-center gap-10 px-5 py-16 sm:min-h-[36rem] sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24">
-        <div className="relative z-10 max-w-xl">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={active.number}
-              initial={reducedMotion ? false : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={reducedMotion ? undefined : { opacity: 0, y: -12 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <p className="text-sm font-medium tracking-[0.2em] text-white/45">
-                {active.number}
-              </p>
-              <h1 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15] text-balance">
-                {active.headline}
-              </h1>
-              <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg text-pretty">
-                {active.subheadline}
-              </p>
-            </motion.div>
-          </AnimatePresence>
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24 lg:min-h-[40rem]">
+        <div className="relative z-10 flex max-w-xl flex-col">
+          {/* Fixed-height copy area so slide text length doesn't change layout */}
+          <div className="relative min-h-[14.5rem] sm:min-h-[16.5rem] lg:min-h-[18rem]">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={active.number}
+                className="absolute inset-0"
+                initial={reducedMotion ? false : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reducedMotion ? undefined : { opacity: 0, y: -12 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <p className="text-sm font-medium tracking-[0.2em] text-white/45">
+                  {active.number}
+                </p>
+                <h1 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15] text-balance">
+                  {active.headline}
+                </h1>
+                <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg text-pretty">
+                  {active.subheadline}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/contact">Start a Project</Button>
@@ -67,7 +71,11 @@ export function HeroCarousel() {
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
-            <div className="flex items-center gap-2" role="tablist" aria-label="Hero slides">
+            <div
+              className="flex items-center gap-2"
+              role="tablist"
+              aria-label="Hero slides"
+            >
               {heroSlides.map((slide, idx) => (
                 <button
                   key={slide.number}
@@ -96,7 +104,7 @@ export function HeroCarousel() {
           </div>
         </div>
 
-        <div className="relative h-64 overflow-hidden rounded-2xl sm:h-80 lg:h-[28rem]">
+        <div className="relative h-64 w-full overflow-hidden rounded-2xl sm:h-80 lg:h-[28rem]">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={active.image}
