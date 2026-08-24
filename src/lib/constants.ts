@@ -3,6 +3,8 @@ export const SITE = {
   domain: "zlooyear.com",
   url: "https://zlooyear.com",
   email: "hello@zlooyear.com",
+  linkedin: "https://www.linkedin.com/company/zlooyear",
+  github: "https://github.com/zlooyear",
   tagline: "Adapting to the Technology of the 2100s.",
   motto: "Build for today. Adapt for what comes next.",
   description:

@@ -70,6 +70,26 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a
+                  href={SITE.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href={SITE.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  GitHub
+                </a>
+              </li>
+              <li>
                 <Link
                   href="/contact"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
