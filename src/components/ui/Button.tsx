@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 type ButtonProps = {
   href?: string;
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "onDark";
   size?: "default" | "sm";
   className?: string;
   type?: "button" | "submit";
@@ -18,6 +18,8 @@ const variants = {
     "border border-border bg-surface text-foreground hover:bg-muted hover:border-border-strong focus-visible:ring-foreground/20",
   ghost:
     "text-foreground hover:bg-muted focus-visible:ring-foreground/20",
+  onDark:
+    "border border-white/20 bg-transparent text-white hover:bg-white/10 hover:border-white/35 focus-visible:ring-white/30",
 };
 
 const sizes = {

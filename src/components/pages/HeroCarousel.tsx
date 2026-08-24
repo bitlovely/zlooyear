@@ -1,88 +1,123 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import type { Service } from "@/lib/data/services";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { SITE } from "@/lib/constants";
+import { heroSlides } from "@/lib/data/hero-slides";
 import { cn } from "@/lib/utils";
 
-type HeroCarouselProps = {
-  slides: Service[];
-};
-
-export function HeroCarousel({ slides }: HeroCarouselProps) {
+export function HeroCarousel() {
   const reducedMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const safeSlides = useMemo(() => slides.slice(0, 3), [slides]);
+  const active = heroSlides[activeIndex];
 
   useEffect(() => {
     if (reducedMotion) return;
-    if (safeSlides.length <= 1) return;
 
     const id = window.setInterval(() => {
-      setActiveIndex((i) => (i + 1) % safeSlides.length);
-    }, 6500);
+      setActiveIndex((i) => (i + 1) % heroSlides.length);
+    }, 7000);
 
     return () => window.clearInterval(id);
-  }, [reducedMotion, safeSlides.length]);
+  }, [reducedMotion]);
 
-  const active = safeSlides[activeIndex];
+  function goTo(index: number) {
+    setActiveIndex((index + heroSlides.length) % heroSlides.length);
+  }
 
   return (
-    <div className="relative">
-      <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1] text-balance">
-        {SITE.tagline}
-      </h1>
-
-      <div className="mt-6">
-        <AnimatePresence mode="wait" initial={false}>
-          {active && (
+    <section className="relative overflow-hidden bg-[#0b0b0c] text-white">
+      <div className="mx-auto grid min-h-[32rem] w-full max-w-6xl items-center gap-10 px-5 py-16 sm:min-h-[36rem] sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24">
+        <div className="relative z-10 max-w-xl">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div
-              key={active.slug}
-              initial={{ opacity: 0, y: 10 }}
+              key={active.number}
+              initial={reducedMotion ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              exit={reducedMotion ? undefined : { opacity: 0, y: -12 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="text-base font-medium text-foreground/80 italic">
-                {SITE.motto}
+              <p className="text-sm font-medium tracking-[0.2em] text-white/45">
+                {active.number}
               </p>
-              <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
-                {active.hero.subheadline}
+              <h1 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15] text-balance">
+                {active.headline}
+              </h1>
+              <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg text-pretty">
+                {active.subheadline}
               </p>
-              <div className="mt-4 flex flex-wrap items-center gap-2">
-                {safeSlides.map((s, idx) => (
-                  <button
-                    key={s.slug}
-                    type="button"
-                    className={cn(
-                      "rounded-full border px-3 py-1 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
-                      idx === activeIndex
-                        ? "border-accent bg-accent/10 text-foreground"
-                        : "border-border bg-background text-muted-foreground hover:bg-muted/40",
-                    )}
-                    aria-label={`Show ${s.shortTitle}`}
-                    aria-current={idx === activeIndex}
-                    onClick={() => setActiveIndex(idx)}
-                  >
-                    {s.number} {s.shortTitle}
-                  </button>
-                ))}
-              </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+          </AnimatePresence>
 
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Button href="/contact">Start a Project</Button>
-        <Button href="/services" variant="secondary">
-          Explore Our Services
-        </Button>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/contact">Start a Project</Button>
+            <Button href="/services" variant="onDark">
+              Explore Our Services
+            </Button>
+          </div>
+
+          <div className="mt-10 flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => goTo(activeIndex - 1)}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <div className="flex items-center gap-2" role="tablist" aria-label="Hero slides">
+              {heroSlides.map((slide, idx) => (
+                <button
+                  key={slide.number}
+                  type="button"
+                  role="tab"
+                  aria-selected={idx === activeIndex}
+                  aria-label={`Show slide ${slide.number}`}
+                  className={cn(
+                    "h-1.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+                    idx === activeIndex
+                      ? "w-8 bg-white"
+                      : "w-2.5 bg-white/30 hover:bg-white/50",
+                  )}
+                  onClick={() => goTo(idx)}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => goTo(activeIndex + 1)}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+
+        <div className="relative h-64 overflow-hidden rounded-2xl sm:h-80 lg:h-[28rem]">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={active.image}
+              className="absolute inset-0"
+              initial={reducedMotion ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={reducedMotion ? undefined : { opacity: 0 }}
+              transition={{ duration: 0.45 }}
+            >
+              <Image
+                src={active.image}
+                alt={active.imageAlt}
+                fill
+                priority={activeIndex === 0}
+                className="object-cover object-center"
+                sizes="(min-width: 1024px) 36rem, 100vw"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
-

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { CaseStudyCard } from "@/components/ui/CaseStudyCard";
@@ -19,7 +18,6 @@ import {
   processSteps,
   whyZlooyear,
 } from "@/lib/data/content";
-import { SITE } from "@/lib/constants";
 import {
   Globe,
   Brain,
@@ -35,54 +33,10 @@ const iconMap: Record<string, LucideIcon> = {
   Sparkles,
 };
 
-function HeroVisual() {
-  return (
-    <div
-      className="relative hidden lg:block h-[420px] w-full"
-      aria-hidden="true"
-    >
-      <div className="absolute inset-0 rounded-2xl border border-border bg-surface overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-40" />
-        <div className="absolute top-8 left-8 right-8 h-8 rounded-lg border border-border bg-muted/50" />
-        <div className="absolute top-20 left-8 w-32 h-24 rounded-lg border border-border bg-muted/30" />
-        <div className="absolute top-20 right-8 left-48 h-24 rounded-lg border border-border bg-accent/[0.06]" />
-        <div className="absolute top-52 left-8 right-8 bottom-8 rounded-lg border border-border bg-muted/20">
-          <div className="p-4 space-y-3">
-            <div className="flex gap-2">
-              <div className="h-2 w-16 rounded-full bg-accent/30" />
-              <div className="h-2 w-24 rounded-full bg-border" />
-            </div>
-            <div className="h-2 w-full rounded-full bg-border/60" />
-            <div className="h-2 w-4/5 rounded-full bg-border/40" />
-            <div className="h-2 w-3/5 rounded-full bg-border/40" />
-            <div className="mt-4 flex gap-2">
-              <div className="h-6 w-20 rounded-md bg-accent/20" />
-              <div className="h-6 w-20 rounded-md bg-border/60" />
-            </div>
-          </div>
-        </div>
-        <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-accent/[0.08] blur-2xl" />
-      </div>
-    </div>
-  );
-}
-
 export function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden pt-16 pb-20 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-32">
-        <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <FadeIn>
-              <HeroCarousel slides={services} />
-            </FadeIn>
-            <FadeIn delay={0.15}>
-              <HeroVisual />
-            </FadeIn>
-          </div>
-        </Container>
-      </section>
+      <HeroCarousel />
 
       {/* Capabilities */}
       <section className="border-y border-border bg-surface py-16 sm:py-20">
