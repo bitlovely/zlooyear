@@ -11,11 +11,11 @@ export function Logo({ className, priority = false }: LogoProps) {
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <Image
-        src="/brand/logo-mark.png?v=3"
+        src="/brand/logo-mark.png?v=5"
         alt=""
-        width={36}
-        height={36}
-        className="h-8 w-8 object-contain sm:h-9 sm:w-9"
+        width={48}
+        height={40}
+        className="h-9 w-auto object-contain sm:h-10"
         priority={priority}
       />
       <span className="text-[0.95rem] font-bold tracking-[0.04em] text-foreground sm:text-lg">

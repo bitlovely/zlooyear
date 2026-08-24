@@ -7,14 +7,14 @@ type LogoMarkProps = {
   priority?: boolean;
 };
 
-export function LogoMark({ className, size = 32, priority = false }: LogoMarkProps) {
+export function LogoMark({ className, size = 40, priority = false }: LogoMarkProps) {
   return (
     <Image
-      src="/brand/logo-mark.png?v=3"
+      src="/brand/logo-mark.png?v=5"
       alt=""
       width={size}
-      height={size}
-      className={cn("h-8 w-8 object-contain", className)}
+      height={Math.round(size * 0.82)}
+      className={cn("h-10 w-auto object-contain", className)}
       priority={priority}
     />
   );
