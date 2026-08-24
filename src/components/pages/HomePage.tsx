@@ -10,6 +10,7 @@ import { CTASection } from "@/components/ui/CTASection";
 import { FadeIn, StaggerItem } from "@/components/ui/FadeIn";
 import { services } from "@/lib/data/services";
 import { caseStudies } from "@/lib/data/case-studies";
+import { HeroCarousel } from "@/components/pages/HeroCarousel";
 import { testimonials } from "@/lib/data/testimonials";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import {
@@ -74,26 +75,7 @@ export function HomePage() {
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <FadeIn>
-              <p className="text-sm font-medium tracking-wide text-accent uppercase">
-                {SITE.name}
-              </p>
-              <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1] text-balance">
-                Adapting to the Technology of the 2100s.
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
-                Zlooyear helps businesses turn emerging technology into
-                practical digital products, AI-powered workflows, and reliable
-                software systems.
-              </p>
-              <p className="mt-3 text-base font-medium text-foreground/80 italic">
-                {SITE.motto}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="/contact">Start a Project</Button>
-                <Button href="/services" variant="secondary">
-                  Explore Our Services
-                </Button>
-              </div>
+              <HeroCarousel slides={services} />
             </FadeIn>
             <FadeIn delay={0.15}>
               <HeroVisual />
