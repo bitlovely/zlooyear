@@ -114,7 +114,6 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
               className="object-cover object-center"
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent lg:bg-gradient-to-r lg:from-background/80 lg:via-background/20 lg:to-transparent" />
           </FadeIn>
         </div>
       </section>
@@ -226,7 +225,6 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
               className="object-cover object-center"
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent lg:bg-gradient-to-l lg:from-background/80 lg:via-background/25 lg:to-transparent" />
           </FadeIn>
 
           <div className="relative order-1 flex items-center py-20 sm:py-28 lg:order-2">
