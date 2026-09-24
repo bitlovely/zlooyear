@@ -1,38 +1,50 @@
 import { Container } from "@/components/ui/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { HeroSculpture } from "@/components/ui/HeroSculpture";
+import { HeroVisual } from "@/components/ui/HeroVisual";
 import { TestimonialFlowBar } from "@/components/ui/TestimonialFlowBar";
 import { SITE } from "@/lib/constants";
 
 export function AboutHero() {
   return (
     <>
-      <section className="pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28 lg:min-h-[min(70vh,40rem)] lg:flex lg:items-center">
-        <Container className="w-full">
-          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-            <FadeIn direction="left">
-              <p className="text-sm font-bold tracking-[0.22em] text-accent uppercase">
+      <section className="relative overflow-hidden">
+        {/* Quiet atmosphere — one soft field, no clutter */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(61,142,245,0.11),transparent_50%),radial-gradient(ellipse_at_10%_90%,rgba(61,142,245,0.05),transparent_45%)]"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"
+          aria-hidden="true"
+        />
+
+        <Container className="relative flex min-h-[min(78vh,44rem)] items-center py-24 sm:py-28 lg:py-32">
+          <div className="grid w-full items-center gap-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-8 xl:gap-16">
+            <FadeIn direction="left" className="max-w-xl">
+              <p className="text-[0.7rem] font-semibold tracking-[0.28em] text-accent uppercase sm:text-xs">
                 Zlooyear
               </p>
-              <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1] text-balance">
+
+              <h1 className="mt-7 text-[2.35rem] font-semibold tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.35rem] lg:leading-[1.08] text-balance">
                 {SITE.tagline}
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                A technology and creative services consulting company. We help
-                businesses design, build, and integrate the digital products and
-                systems they need to operate and grow.
+
+              <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Technology consulting for businesses that need systems built for
+                today — and ready for what comes next.
               </p>
-              <p className="mt-5 max-w-2xl text-base font-medium text-foreground/80 italic sm:text-lg">
+
+              <p className="mt-8 text-sm font-medium tracking-wide text-foreground/70 sm:text-base">
                 {SITE.motto}
               </p>
             </FadeIn>
 
             <FadeIn
-              delay={0.15}
+              delay={0.14}
               direction="right"
               className="flex justify-center lg:justify-end"
             >
-              <HeroSculpture />
+              <HeroVisual />
             </FadeIn>
           </div>
         </Container>
