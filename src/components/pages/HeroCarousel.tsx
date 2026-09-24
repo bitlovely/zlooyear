@@ -35,17 +35,17 @@ export function HeroCarousel() {
       />
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24 lg:min-h-[40rem]">
         <div className="relative z-10 flex max-w-xl flex-col">
-          <div className="relative min-h-[14.5rem] sm:min-h-[16.5rem] lg:min-h-[18rem]">
+          <div className="relative min-h-[14.5rem] overflow-hidden sm:min-h-[16.5rem] lg:min-h-[18rem]">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={active.number}
-                className="absolute inset-0"
+                className="absolute inset-x-0 top-0"
                 initial={reducedMotion ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={reducedMotion ? undefined : { opacity: 0, y: -12 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               >
-                <p className="text-sm font-medium tracking-[0.2em] text-muted-foreground">
+                <p className="text-sm font-medium tracking-[0.2em] text-accent">
                   {active.number}
                 </p>
                 <h1 className="mt-5 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15] text-balance">
@@ -58,9 +58,11 @@ export function HeroCarousel() {
             </AnimatePresence>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/contact">Start a Project</Button>
-            <Button href="/services" variant="secondary">
+          <div className="relative z-10 mt-8 flex flex-wrap gap-3">
+            <Button href="/contact" size="lg">
+              Start a Project
+            </Button>
+            <Button href="/services" variant="secondary" size="lg">
               Explore Our Services
             </Button>
           </div>

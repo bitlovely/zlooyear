@@ -5,7 +5,7 @@ type ButtonProps = {
   href?: string;
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "ghost" | "onDark";
-  size?: "default" | "sm";
+  size?: "default" | "sm" | "lg";
   className?: string;
   type?: "button" | "submit";
   onClick?: () => void;
@@ -25,6 +25,7 @@ const variants = {
 const sizes = {
   default: "px-5 py-2.5 text-sm",
   sm: "px-4 py-2 text-sm",
+  lg: "px-6 py-3 text-base",
 };
 
 export function Button({
