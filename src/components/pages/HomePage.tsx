@@ -6,7 +6,7 @@ import { ServiceCard } from "@/components/ui/ServiceCard";
 import { CaseStudyCard } from "@/components/ui/CaseStudyCard";
 import { CTASection } from "@/components/ui/CTASection";
 import { FadeIn, StaggerItem } from "@/components/ui/FadeIn";
-import { HeroCarousel } from "@/components/pages/HeroCarousel";
+import { AboutHero } from "@/components/pages/AboutHero";
 import { AboutSections } from "@/components/pages/AboutSections";
 import { services } from "@/lib/data/services";
 import { caseStudies } from "@/lib/data/case-studies";
@@ -15,10 +15,9 @@ import { creativeTechnology } from "@/lib/data/content";
 export function HomePage() {
   return (
     <>
-      <HeroCarousel />
+      <AboutHero />
 
-      {/* About story — primary homepage narrative */}
-      <AboutSections showIntro />
+      <AboutSections showIntro={false} />
 
       {/* Services */}
       <section className="border-t border-border py-20 sm:py-28">
