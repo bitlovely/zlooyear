@@ -39,7 +39,7 @@ export function Navbar() {
         "sticky top-0 z-50 transition-all duration-300",
         scrolled
           ? "border-b border-border/80 bg-background/90 backdrop-blur-md shadow-sm"
-          : "bg-background/80 backdrop-blur-sm",
+          : "bg-transparent",
       )}
     >
       <AnnouncementBar />

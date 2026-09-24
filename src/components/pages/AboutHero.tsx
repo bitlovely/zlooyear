@@ -6,12 +6,8 @@ import { SITE } from "@/lib/constants";
 export function AboutHero() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-border bg-background">
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(46,196,182,0.14),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(46,196,182,0.06),transparent_50%)]"
-          aria-hidden="true"
-        />
-        <Container className="relative py-20 sm:py-28 lg:py-32">
+      <section className="pt-16 pb-12 sm:pt-20 sm:pb-16">
+        <Container>
           <FadeIn>
             <p className="text-sm font-bold tracking-[0.22em] text-accent uppercase">
               Zlooyear
