@@ -66,8 +66,8 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
           band.why,
         )}
       >
-        <div className="grid lg:grid-cols-2 lg:min-h-[30rem]">
-          <div className="relative flex items-center py-20 sm:py-28">
+        <div className="grid lg:grid-cols-2 lg:min-h-[min(70vh,42rem)]">
+          <div className="relative flex items-center py-24 sm:py-32 lg:py-36">
             <Container className="w-full lg:max-w-none lg:px-8 xl:pl-[max(2rem,calc((100vw-72rem)/2+2rem))] xl:pr-10">
               <FadeIn direction="left" className="max-w-md">
                 <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
@@ -105,7 +105,7 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
           <FadeIn
             delay={0.12}
             direction="right"
-            className="relative min-h-[18rem] sm:min-h-[22rem] lg:min-h-full"
+            className="relative min-h-[22rem] sm:min-h-[28rem] lg:min-h-full"
           >
             <Image
               src={sectionImages.why.src}
