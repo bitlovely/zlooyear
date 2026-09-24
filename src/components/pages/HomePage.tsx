@@ -1,7 +1,6 @@
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/ui/CTASection";
-import { FadeIn } from "@/components/ui/FadeIn";
+import { FadeIn, StaggerItem } from "@/components/ui/FadeIn";
 import { AboutHero } from "@/components/pages/AboutHero";
 import { AboutSections } from "@/components/pages/AboutSections";
 import { creativeTechnology } from "@/lib/data/content";
@@ -13,27 +12,34 @@ export function HomePage() {
 
       <AboutSections showIntro={false} />
 
-      {/* Surface after About “Approach” (default) */}
       <section className="border-t border-border bg-surface py-20 sm:py-28">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
-            <FadeIn>
-              <SectionHeading
-                eyebrow="Creative Technology"
-                title={creativeTechnology.title}
-                description={creativeTechnology.description}
-              />
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-start">
+            <FadeIn className="lg:col-span-5">
+              <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
+                Creative Technology
+              </p>
+              <h2 className="mt-5 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15] text-balance">
+                {creativeTechnology.title}
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground text-pretty">
+                {creativeTechnology.description}
+              </p>
             </FadeIn>
-            <FadeIn delay={0.1}>
-              <ul className="space-y-4">
-                {creativeTechnology.offerings.map((offering) => (
-                  <li
-                    key={offering}
-                    className="flex items-start gap-3 text-muted-foreground"
-                  >
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    {offering}
-                  </li>
+
+            <FadeIn delay={0.1} className="lg:col-span-6 lg:col-start-7 lg:pt-2">
+              <ul className="border-t border-border">
+                {creativeTechnology.offerings.map((offering, i) => (
+                  <StaggerItem key={offering} index={i}>
+                    <li className="flex gap-5 border-b border-border py-5 sm:gap-6 sm:py-6">
+                      <span className="shrink-0 text-sm font-medium tracking-[0.14em] text-accent">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-base leading-relaxed text-foreground/90 sm:text-lg">
+                        {offering}
+                      </span>
+                    </li>
+                  </StaggerItem>
                 ))}
               </ul>
             </FadeIn>

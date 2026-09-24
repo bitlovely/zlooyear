@@ -187,30 +187,39 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
 
       <section
         className={cn(
-          "border-t border-border py-16 sm:py-20",
+          "border-t border-border py-20 sm:py-28",
           band.approach,
         )}
       >
         <Container>
-          <FadeIn>
-            <SectionHeading
-              eyebrow="Our Approach"
-              title="What sets our work apart."
-            />
-          </FadeIn>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-end">
+            <FadeIn className="lg:col-span-5">
+              <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
+                Our Approach
+              </p>
+              <h2 className="mt-5 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15] text-balance">
+                What sets our work apart.
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.08} className="lg:col-span-5 lg:col-start-8">
+              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Four commitments we carry into every build — from first brief to
+                long-term iteration.
+              </p>
+            </FadeIn>
+          </div>
+
+          <div className="mt-14 grid gap-x-10 gap-y-12 sm:mt-16 sm:grid-cols-2">
             {whyZlooyear.map((item, i) => (
               <StaggerItem key={item.title} index={i}>
-                <div
-                  className={cn(
-                    "flex h-full flex-col rounded-2xl border border-border p-6 sm:p-8",
-                    band.approach ? "bg-background" : "bg-surface",
-                  )}
-                >
-                  <h3 className="text-lg font-semibold text-foreground">
+                <div className="relative pl-5 before:absolute before:left-0 before:top-1 before:h-[calc(100%-0.25rem)] before:w-px before:bg-accent/40">
+                  <span className="text-xs font-medium tracking-[0.16em] text-accent uppercase">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-foreground">
                     {item.title}
                   </h3>
-                  <p className="mt-3 flex-1 text-muted-foreground leading-relaxed">
+                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                     {item.description}
                   </p>
                 </div>
