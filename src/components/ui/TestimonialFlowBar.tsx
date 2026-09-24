@@ -16,17 +16,17 @@ export function TestimonialFlowBar({ className }: TestimonialFlowBarProps) {
   return (
     <div
       className={cn(
-        "relative border-t border-border/60 bg-background/40 overflow-hidden backdrop-blur-sm",
+        "relative border-t border-border bg-muted/60 overflow-hidden",
         className,
       )}
       aria-label="Client feedback"
     >
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent sm:w-20"
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-muted to-transparent sm:w-20"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent sm:w-20"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-muted to-transparent sm:w-20"
         aria-hidden="true"
       />
 

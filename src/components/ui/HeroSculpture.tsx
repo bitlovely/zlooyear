@@ -24,7 +24,7 @@ export function HeroSculpture({ className }: HeroSculptureProps) {
       aria-hidden="true"
     >
       {/* Soft depth field */}
-      <div className="pointer-events-none absolute inset-[12%] rounded-full bg-[radial-gradient(circle_at_center,rgba(99,168,248,0.16),rgba(26,92,255,0.08)_45%,transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-[12%] rounded-full bg-[radial-gradient(circle_at_center,rgba(61,142,245,0.18),rgba(61,142,245,0.06)_45%,transparent_70%)]" />
 
       <div
         className="absolute inset-0"
@@ -61,17 +61,17 @@ export function HeroSculpture({ className }: HeroSculptureProps) {
             style={{
               transform: "translate(-50%, -50%) rotateX(68deg) rotateZ(18deg)",
               boxShadow:
-                "0 0 24px rgba(77,163,255,0.25), inset 0 0 18px rgba(77,163,255,0.12)",
+                "0 0 20px rgba(61,142,245,0.18), inset 0 0 12px rgba(61,142,245,0.08)",
             }}
           />
 
           {/* Inner orbital ring — present systems */}
           <div
-            className="absolute left-1/2 top-1/2 h-[52%] w-[52%] -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-accent/80"
+            className="absolute left-1/2 top-1/2 h-[52%] w-[52%] -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-accent/70"
             style={{
               transform: "translate(-50%, -50%) rotateX(68deg) rotateZ(-42deg)",
               boxShadow:
-                "0 0 20px rgba(99,168,248,0.28), inset 0 0 14px rgba(99,168,248,0.15)",
+                "0 0 16px rgba(61,142,245,0.2), inset 0 0 10px rgba(61,142,245,0.1)",
             }}
           />
 
@@ -130,7 +130,7 @@ export function HeroSculpture({ className }: HeroSculptureProps) {
               className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent"
               style={{
                 transform: `translate(-50%, -50%) rotateZ(${deg}deg) rotateX(68deg) translateY(-36%) translateZ(4px)`,
-                boxShadow: "0 0 10px rgba(99,168,248,0.7)",
+                boxShadow: "0 0 8px rgba(61,142,245,0.45)",
               }}
             />
           ))}
@@ -214,65 +214,59 @@ function Crystal() {
       className="relative h-28 w-28"
       style={{ transformStyle: "preserve-3d" }}
     >
-      {/* Front */}
       <div
         className={face}
         style={{
           transform: "translateZ(48px)",
           background:
-            "linear-gradient(145deg, rgba(94,184,255,0.55), rgba(26,92,255,0.35))",
-          border: "1px solid rgba(126,200,255,0.35)",
-          backdropFilter: "blur(2px)",
+            "linear-gradient(145deg, rgba(180,210,255,0.95), rgba(61,142,245,0.55))",
+          border: "1px solid rgba(61,142,245,0.35)",
+          boxShadow: "0 8px 24px rgba(18,21,28,0.08)",
         }}
       />
-      {/* Back */}
       <div
         className={face}
         style={{
           transform: "rotateY(180deg) translateZ(48px)",
           background:
-            "linear-gradient(145deg, rgba(99,168,248,0.4), rgba(26,92,255,0.3))",
-          border: "1px solid rgba(99,168,248,0.3)",
+            "linear-gradient(145deg, rgba(99,168,248,0.7), rgba(43,126,235,0.55))",
+          border: "1px solid rgba(61,142,245,0.3)",
         }}
       />
-      {/* Right */}
       <div
         className={face}
         style={{
           transform: "rotateY(90deg) translateZ(48px)",
           background:
-            "linear-gradient(160deg, rgba(26,92,255,0.5), rgba(14,40,120,0.55))",
-          border: "1px solid rgba(77,163,255,0.25)",
+            "linear-gradient(160deg, rgba(61,142,245,0.75), rgba(37,99,200,0.65))",
+          border: "1px solid rgba(61,142,245,0.28)",
         }}
       />
-      {/* Left */}
       <div
         className={face}
         style={{
           transform: "rotateY(-90deg) translateZ(48px)",
           background:
-            "linear-gradient(200deg, rgba(99,168,248,0.45), rgba(20,60,140,0.5))",
-          border: "1px solid rgba(99,168,248,0.25)",
+            "linear-gradient(200deg, rgba(120,180,250,0.8), rgba(61,142,245,0.55))",
+          border: "1px solid rgba(61,142,245,0.28)",
         }}
       />
-      {/* Top */}
       <div
         className={face}
         style={{
           transform: "rotateX(90deg) translateZ(48px)",
           background:
-            "linear-gradient(180deg, rgba(126,200,255,0.5), rgba(99,168,248,0.25))",
-          border: "1px solid rgba(126,200,255,0.3)",
+            "linear-gradient(180deg, rgba(210,230,255,0.95), rgba(99,168,248,0.5))",
+          border: "1px solid rgba(126,180,245,0.4)",
         }}
       />
-      {/* Bottom */}
       <div
         className={face}
         style={{
           transform: "rotateX(-90deg) translateZ(48px)",
           background:
-            "linear-gradient(0deg, rgba(26,92,255,0.45), rgba(10,20,50,0.6))",
-          border: "1px solid rgba(77,163,255,0.2)",
+            "linear-gradient(0deg, rgba(61,142,245,0.7), rgba(37,99,180,0.75))",
+          border: "1px solid rgba(61,142,245,0.25)",
         }}
       />
     </div>
