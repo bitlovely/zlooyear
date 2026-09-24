@@ -24,7 +24,7 @@ export function HeroSculpture({ className }: HeroSculptureProps) {
       aria-hidden="true"
     >
       {/* Soft depth field */}
-      <div className="pointer-events-none absolute inset-[12%] rounded-full bg-[radial-gradient(circle_at_center,rgba(46,196,182,0.16),rgba(26,92,255,0.08)_45%,transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-[12%] rounded-full bg-[radial-gradient(circle_at_center,rgba(99,168,248,0.16),rgba(26,92,255,0.08)_45%,transparent_70%)]" />
 
       <div
         className="absolute inset-0"
@@ -71,7 +71,7 @@ export function HeroSculpture({ className }: HeroSculptureProps) {
             style={{
               transform: "translate(-50%, -50%) rotateX(68deg) rotateZ(-42deg)",
               boxShadow:
-                "0 0 20px rgba(46,196,182,0.28), inset 0 0 14px rgba(46,196,182,0.15)",
+                "0 0 20px rgba(99,168,248,0.28), inset 0 0 14px rgba(99,168,248,0.15)",
             }}
           />
 
@@ -130,7 +130,7 @@ export function HeroSculpture({ className }: HeroSculptureProps) {
               className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent"
               style={{
                 transform: `translate(-50%, -50%) rotateZ(${deg}deg) rotateX(68deg) translateY(-36%) translateZ(4px)`,
-                boxShadow: "0 0 10px rgba(46,196,182,0.7)",
+                boxShadow: "0 0 10px rgba(99,168,248,0.7)",
               }}
             />
           ))}
@@ -231,8 +231,8 @@ function Crystal() {
         style={{
           transform: "rotateY(180deg) translateZ(48px)",
           background:
-            "linear-gradient(145deg, rgba(46,196,182,0.4), rgba(26,92,255,0.3))",
-          border: "1px solid rgba(46,196,182,0.3)",
+            "linear-gradient(145deg, rgba(99,168,248,0.4), rgba(26,92,255,0.3))",
+          border: "1px solid rgba(99,168,248,0.3)",
         }}
       />
       {/* Right */}
@@ -251,8 +251,8 @@ function Crystal() {
         style={{
           transform: "rotateY(-90deg) translateZ(48px)",
           background:
-            "linear-gradient(200deg, rgba(46,196,182,0.45), rgba(20,60,140,0.5))",
-          border: "1px solid rgba(46,196,182,0.25)",
+            "linear-gradient(200deg, rgba(99,168,248,0.45), rgba(20,60,140,0.5))",
+          border: "1px solid rgba(99,168,248,0.25)",
         }}
       />
       {/* Top */}
@@ -261,7 +261,7 @@ function Crystal() {
         style={{
           transform: "rotateX(90deg) translateZ(48px)",
           background:
-            "linear-gradient(180deg, rgba(126,200,255,0.5), rgba(46,196,182,0.25))",
+            "linear-gradient(180deg, rgba(126,200,255,0.5), rgba(99,168,248,0.25))",
           border: "1px solid rgba(126,200,255,0.3)",
         }}
       />

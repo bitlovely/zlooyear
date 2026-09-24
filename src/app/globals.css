@@ -8,8 +8,8 @@
   --color-muted-foreground: #9aa0b4;
   --color-border: #2a2e3a;
   --color-border-strong: #3d4454;
-  --color-accent: #2ec4b6;
-  --color-accent-hover: #4dd4c7;
+  --color-accent: #63a8f8;
+  --color-accent-hover: #7bb8fa;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
