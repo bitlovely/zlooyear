@@ -5,12 +5,30 @@ import { FadeIn, StaggerItem } from "@/components/ui/FadeIn";
 import { SITE } from "@/lib/constants";
 import { beliefs } from "@/lib/data/about";
 import { processSteps, whyZlooyear } from "@/lib/data/content";
+import { cn } from "@/lib/utils";
 
 type AboutSectionsProps = {
   showIntro?: boolean;
 };
 
 export function AboutSections({ showIntro = true }: AboutSectionsProps) {
+  // Alternate surface / default so bands stay even with or without the intro.
+  // Homepage (no intro): surface → default → surface → default
+  // About page (intro): intro surface → default → surface → default → surface
+  const band = showIntro
+    ? {
+        why: "",
+        believe: "bg-surface",
+        work: "",
+        approach: "bg-surface",
+      }
+    : {
+        why: "bg-surface",
+        believe: "",
+        work: "bg-surface",
+        approach: "",
+      };
+
   return (
     <>
       {showIntro && (
@@ -38,7 +56,9 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
         </section>
       )}
 
-      <section className="border-t border-border py-20 sm:py-28">
+      <section
+        className={cn("border-t border-border py-20 sm:py-28", band.why)}
+      >
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-start">
             <FadeIn className="lg:col-span-5">
@@ -90,7 +110,12 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
         </Container>
       </section>
 
-      <section className="border-t border-border bg-surface py-16 sm:py-20">
+      <section
+        className={cn(
+          "border-t border-border py-16 sm:py-20",
+          band.believe,
+        )}
+      >
         <Container>
           <FadeIn>
             <SectionHeading eyebrow="What We Believe" title="Our principles." />
@@ -98,7 +123,12 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {beliefs.map((belief, i) => (
               <StaggerItem key={belief.title} index={i}>
-                <div className="flex h-full flex-col rounded-2xl border border-border bg-background p-6 sm:p-8">
+                <div
+                  className={cn(
+                    "flex h-full flex-col rounded-2xl border border-border p-6 sm:p-8",
+                    band.believe ? "bg-background" : "bg-surface",
+                  )}
+                >
                   <h3 className="text-lg font-semibold text-foreground">
                     {belief.title}
                   </h3>
@@ -112,7 +142,9 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
         </Container>
       </section>
 
-      <section className="border-t border-border py-16 sm:py-20">
+      <section
+        className={cn("border-t border-border py-16 sm:py-20", band.work)}
+      >
         <Container>
           <FadeIn>
             <SectionHeading
@@ -137,7 +169,12 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
         </Container>
       </section>
 
-      <section className="border-t border-border bg-surface py-16 sm:py-20">
+      <section
+        className={cn(
+          "border-t border-border py-16 sm:py-20",
+          band.approach,
+        )}
+      >
         <Container>
           <FadeIn>
             <SectionHeading
@@ -148,7 +185,12 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {whyZlooyear.map((item, i) => (
               <StaggerItem key={item.title} index={i}>
-                <div className="flex h-full flex-col rounded-2xl border border-border bg-background p-6 sm:p-8">
+                <div
+                  className={cn(
+                    "flex h-full flex-col rounded-2xl border border-border p-6 sm:p-8",
+                    band.approach ? "bg-background" : "bg-surface",
+                  )}
+                >
                   <h3 className="text-lg font-semibold text-foreground">
                     {item.title}
                   </h3>

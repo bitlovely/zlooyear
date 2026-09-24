@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { cn } from "@/lib/utils";
 
 type CTASectionProps = {
   title?: string;
@@ -9,6 +10,7 @@ type CTASectionProps = {
   primaryHref?: string;
   secondaryLabel?: string;
   secondaryHref?: string;
+  className?: string;
 };
 
 export function CTASection({
@@ -18,9 +20,12 @@ export function CTASection({
   primaryHref = "/contact",
   secondaryLabel,
   secondaryHref,
+  className,
 }: CTASectionProps) {
   return (
-    <section className="py-20 sm:py-28">
+    <section
+      className={cn("border-t border-border py-20 sm:py-28", className)}
+    >
       <Container>
         <FadeIn>
           <div className="relative overflow-hidden rounded-2xl border border-border bg-surface px-6 py-14 sm:px-12 sm:py-16">
