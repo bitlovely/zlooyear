@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { heroSlides } from "@/lib/data/hero-slides";
+import { TestimonialFlowBar } from "@/components/ui/TestimonialFlowBar";
 import { cn } from "@/lib/utils";
 
 export function HeroCarousel() {
@@ -132,6 +133,8 @@ export function HeroCarousel() {
           </AnimatePresence>
         </div>
       </div>
+
+      <TestimonialFlowBar />
     </section>
   );
 }
