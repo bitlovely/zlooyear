@@ -28,10 +28,13 @@ export function HeroCarousel() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#0b0b0c] text-white">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24 lg:min-h-[40rem]">
+    <section className="relative overflow-hidden border-b border-border bg-background">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(107,122,239,0.12),transparent_55%)]"
+        aria-hidden="true"
+      />
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24 lg:min-h-[40rem]">
         <div className="relative z-10 flex max-w-xl flex-col">
-          {/* Fixed-height copy area so slide text length doesn't change layout */}
           <div className="relative min-h-[14.5rem] sm:min-h-[16.5rem] lg:min-h-[18rem]">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
@@ -42,13 +45,13 @@ export function HeroCarousel() {
                 exit={reducedMotion ? undefined : { opacity: 0, y: -12 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               >
-                <p className="text-sm font-medium tracking-[0.2em] text-white/45">
+                <p className="text-sm font-medium tracking-[0.2em] text-muted-foreground">
                   {active.number}
                 </p>
-                <h1 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15] text-balance">
+                <h1 className="mt-5 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15] text-balance">
                   {active.headline}
                 </h1>
-                <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg text-pretty">
+                <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg text-pretty">
                   {active.subheadline}
                 </p>
               </motion.div>
@@ -57,7 +60,7 @@ export function HeroCarousel() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/contact">Start a Project</Button>
-            <Button href="/services" variant="onDark">
+            <Button href="/services" variant="secondary">
               Explore Our Services
             </Button>
           </div>
@@ -66,7 +69,7 @@ export function HeroCarousel() {
             <button
               type="button"
               onClick={() => goTo(activeIndex - 1)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-4 w-4" />
@@ -86,8 +89,8 @@ export function HeroCarousel() {
                   className={cn(
                     "h-1.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
                     idx === activeIndex
-                      ? "w-8 bg-white"
-                      : "w-2.5 bg-white/30 hover:bg-white/50",
+                      ? "w-8 bg-accent"
+                      : "w-2.5 bg-border-strong hover:bg-muted-foreground/50",
                   )}
                   onClick={() => goTo(idx)}
                 />
@@ -96,7 +99,7 @@ export function HeroCarousel() {
             <button
               type="button"
               onClick={() => goTo(activeIndex + 1)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               aria-label="Next slide"
             >
               <ChevronRight className="h-4 w-4" />
@@ -104,7 +107,7 @@ export function HeroCarousel() {
           </div>
         </div>
 
-        <div className="relative h-64 w-full overflow-hidden rounded-2xl sm:h-80 lg:h-[28rem]">
+        <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-border bg-surface sm:h-80 lg:h-[28rem]">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={active.image}
@@ -119,6 +122,7 @@ export function HeroCarousel() {
                 alt={active.imageAlt}
                 fill
                 priority={activeIndex === 0}
+                quality={90}
                 className="object-cover object-center"
                 sizes="(min-width: 1024px) 36rem, 100vw"
               />

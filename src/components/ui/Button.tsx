@@ -15,11 +15,11 @@ const variants = {
   primary:
     "bg-accent text-white hover:bg-accent-hover shadow-sm focus-visible:ring-accent/40",
   secondary:
-    "border border-border bg-surface text-foreground hover:bg-muted hover:border-border-strong focus-visible:ring-foreground/20",
+    "border border-border bg-muted/40 text-foreground hover:bg-muted hover:border-border-strong focus-visible:ring-foreground/20",
   ghost:
     "text-foreground hover:bg-muted focus-visible:ring-foreground/20",
   onDark:
-    "border border-white/20 bg-transparent text-white hover:bg-white/10 hover:border-white/35 focus-visible:ring-white/30",
+    "border border-border bg-transparent text-foreground hover:bg-muted hover:border-border-strong focus-visible:ring-accent/40",
 };
 
 const sizes = {

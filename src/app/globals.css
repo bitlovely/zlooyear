@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #fafafa;
-  --color-foreground: #0f0f10;
-  --color-surface: #ffffff;
-  --color-muted: #f1f3f9;
-  --color-muted-foreground: #5a5f78;
-  --color-border: #e0e6f3;
-  --color-border-strong: #cfd8ea;
-  --color-accent: #4b5bd8;
-  --color-accent-hover: #3c49be;
+  --color-background: #0b0c0f;
+  --color-foreground: #f4f4f5;
+  --color-surface: #12141a;
+  --color-muted: #1a1c24;
+  --color-muted-foreground: #9aa0b4;
+  --color-border: #2a2e3a;
+  --color-border-strong: #3d4454;
+  --color-accent: #6b7aef;
+  --color-accent-hover: #8490f5;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
@@ -17,6 +17,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -31,6 +32,6 @@
   }
 
   ::selection {
-    @apply bg-accent/20 text-foreground;
+    @apply bg-accent/30 text-foreground;
   }
 }

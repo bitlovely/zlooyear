@@ -32,15 +32,15 @@ export function AnnouncementBar() {
   }
 
   return (
-    <div className="relative bg-foreground text-white">
-      <p className="mx-auto max-w-6xl px-10 py-2.5 text-center text-xs leading-relaxed sm:px-12 sm:text-sm lg:px-14">
+    <div className="relative border-b border-border bg-muted text-foreground">
+      <p className="mx-auto max-w-6xl px-10 py-2.5 text-center text-xs leading-relaxed text-muted-foreground sm:px-12 sm:text-sm lg:px-14">
         🚀 We’re launching our new company website and officially registering our
         business entity. Stay tuned for more updates!
       </p>
       <button
         type="button"
         onClick={dismiss}
-        className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-8 w-8 items-center justify-center rounded-md text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 sm:right-3"
+        className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-background/60 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:right-3"
         aria-label="Dismiss announcement"
       >
         <X className="h-4 w-4" />

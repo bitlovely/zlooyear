@@ -13,7 +13,7 @@ export const heroSlides: HeroSlide[] = [
       "Modern corporate sites, SaaS platforms, and high-performance web applications.",
     subheadline:
       "designed, engineered, and optimized for the way your business operates.",
-    image: "/hero/slide-01.jpg",
+    image: "/hero/slide-01.jpg?v=2",
     imageAlt:
       "Laptop and phone showing a high-performance business dashboard",
   },
@@ -22,7 +22,7 @@ export const heroSlides: HeroSlide[] = [
     headline:
       "Practical AI integration — assistants, automation, knowledge systems, and internal tools",
     subheadline: "that connect to your existing products and workflows.",
-    image: "/hero/slide-02.jpg",
+    image: "/hero/slide-02.jpg?v=2",
     imageAlt: "Desktop workstation showing an AI assistant and workflow tools",
   },
   {
@@ -30,7 +30,7 @@ export const heroSlides: HeroSlide[] = [
     headline:
       "Full-stack development, API design, cloud architecture, and technical consulting",
     subheadline: "for teams building, scaling, or modernizing software.",
-    image: "/hero/slide-03.jpg",
+    image: "/hero/slide-03.jpg?v=2",
     imageAlt:
       "Monitor showing code and a system architecture diagram in a server environment",
   },

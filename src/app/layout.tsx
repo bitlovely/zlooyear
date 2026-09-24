@@ -26,7 +26,7 @@ export default function RootLayout({
   const jsonLd = organizationJsonLd();
 
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`dark ${inter.variable}`}>
       <body className="min-h-screen flex flex-col font-sans">
         <script
           type="application/ld+json"

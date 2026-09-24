@@ -25,7 +25,7 @@ export function CTASection({
         <FadeIn>
           <div className="relative overflow-hidden rounded-2xl border border-border bg-surface px-6 py-14 sm:px-12 sm:py-16">
             <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/[0.04] via-transparent to-transparent"
+              className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/[0.12] via-transparent to-transparent"
               aria-hidden="true"
             />
             <div className="relative max-w-xl">
