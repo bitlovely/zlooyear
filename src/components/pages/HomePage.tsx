@@ -1,9 +1,11 @@
 import { Container } from "@/components/ui/Container";
 import { CTASection } from "@/components/ui/CTASection";
 import { FadeIn, StaggerItem } from "@/components/ui/FadeIn";
+import { SectionBackdrop } from "@/components/ui/SectionMedia";
 import { AboutHero } from "@/components/pages/AboutHero";
 import { AboutSections } from "@/components/pages/AboutSections";
 import { creativeTechnology } from "@/lib/data/content";
+import { sectionImages } from "@/lib/data/section-images";
 
 export function HomePage() {
   return (
@@ -12,8 +14,13 @@ export function HomePage() {
 
       <AboutSections showIntro={false} />
 
-      <section className="border-t border-border bg-surface py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden border-t border-border bg-surface py-20 sm:py-28">
+        <SectionBackdrop
+          src={sectionImages.creative.src}
+          alt={sectionImages.creative.alt}
+          intensity="strong"
+        />
+        <Container className="relative">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-start">
             <FadeIn direction="left" className="lg:col-span-5">
               <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
