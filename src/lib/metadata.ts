@@ -59,5 +59,6 @@ export function organizationJsonLd() {
     email: SITE.email,
     description: SITE.description,
     slogan: SITE.tagline,
+    logo: `${SITE.url}/brand/logo-mark.png`,
   };
 }
