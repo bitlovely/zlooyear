@@ -112,27 +112,43 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
 
       <section
         className={cn(
-          "border-t border-border py-16 sm:py-20",
+          "border-t border-border py-20 sm:py-28",
           band.believe,
         )}
       >
         <Container>
-          <FadeIn>
-            <SectionHeading eyebrow="What We Believe" title="Our principles." />
-          </FadeIn>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-end">
+            <FadeIn className="lg:col-span-5">
+              <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
+                What We Believe
+              </p>
+              <h2 className="mt-5 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15] text-balance">
+                Principles that shape every engagement.
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.08} className="lg:col-span-5 lg:col-start-8">
+              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Not slogans — working standards we use when tradeoffs get real.
+              </p>
+            </FadeIn>
+          </div>
+
+          <div className="mt-14 sm:mt-16">
             {beliefs.map((belief, i) => (
               <StaggerItem key={belief.title} index={i}>
                 <div
                   className={cn(
-                    "flex h-full flex-col rounded-2xl border border-border p-6 sm:p-8",
-                    band.believe ? "bg-background" : "bg-surface",
+                    "grid gap-4 border-t border-border py-8 sm:grid-cols-12 sm:gap-8 sm:py-10",
+                    i === beliefs.length - 1 && "border-b",
                   )}
                 >
-                  <h3 className="text-lg font-semibold text-foreground">
+                  <span className="text-sm font-medium tracking-[0.14em] text-accent sm:col-span-2">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-xl font-semibold tracking-tight text-foreground sm:col-span-4 sm:text-2xl text-balance">
                     {belief.title}
                   </h3>
-                  <p className="mt-3 flex-1 text-muted-foreground leading-relaxed">
+                  <p className="text-base leading-relaxed text-muted-foreground sm:col-span-6 sm:pt-1">
                     {belief.description}
                   </p>
                 </div>
