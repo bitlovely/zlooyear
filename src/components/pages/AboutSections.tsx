@@ -66,48 +66,35 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
           band.why,
         )}
       >
-        <div className="grid lg:grid-cols-2 lg:min-h-[34rem]">
+        <div className="grid lg:grid-cols-2 lg:min-h-[30rem]">
           <div className="relative flex items-center py-20 sm:py-28">
             <Container className="w-full lg:max-w-none lg:px-8 xl:pl-[max(2rem,calc((100vw-72rem)/2+2rem))] xl:pr-10">
-              <FadeIn direction="left">
+              <FadeIn direction="left" className="max-w-md">
                 <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
                   Why We Exist
                 </p>
-                <h2 className="mt-5 max-w-xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15] text-balance">
-                  Technology partners who understand both engineering and
-                  context.
+                <h2 className="mt-5 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.6rem] lg:leading-[1.15] text-balance">
+                  Engineering depth. Business context.
                 </h2>
-                <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground text-pretty">
-                  Zlooyear was founded on the belief that companies shouldn&apos;t
-                  have to choose between technical depth and business
-                  understanding. We bridge that gap — building systems that are
-                  well-engineered and aligned with how your organization actually
-                  works.
+                <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                  Companies shouldn&apos;t have to choose. We bridge both.
                 </p>
 
-                <div className="mt-12 grid max-w-lg gap-10 sm:grid-cols-2 sm:gap-8">
-                  <div className="relative pl-5 before:absolute before:left-0 before:top-1 before:h-[calc(100%-0.25rem)] before:w-px before:bg-accent/50">
+                <div className="mt-10 flex gap-10">
+                  <div>
                     <p className="text-xs font-medium tracking-[0.16em] text-accent uppercase">
                       Depth
                     </p>
-                    <p className="mt-3 text-base font-medium text-foreground">
-                      Engineering that holds up
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      Solid architecture, clean delivery, and systems built to
-                      last beyond the first launch.
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Systems that last
                     </p>
                   </div>
-                  <div className="relative pl-5 before:absolute before:left-0 before:top-1 before:h-[calc(100%-0.25rem)] before:w-px before:bg-border-strong">
-                    <p className="text-xs font-medium tracking-[0.16em] text-muted-foreground uppercase">
+                  <div>
+                    <p className="text-xs font-medium tracking-[0.16em] text-accent uppercase">
                       Context
                     </p>
-                    <p className="mt-3 text-base font-medium text-foreground">
-                      Decisions that fit the business
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      Solutions shaped by how your team operates, not generic
-                      playbooks.
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Decisions that fit
                     </p>
                   </div>
                 </div>
