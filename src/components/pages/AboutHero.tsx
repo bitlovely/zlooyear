@@ -7,9 +7,9 @@ import { SITE } from "@/lib/constants";
 export function AboutHero() {
   return (
     <>
-      <section className="pt-16 pb-12 sm:pt-20 sm:pb-16">
-        <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <section className="pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28 lg:min-h-[min(70vh,40rem)] lg:flex lg:items-center">
+        <Container className="w-full">
+          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
             <FadeIn>
               <p className="text-sm font-bold tracking-[0.22em] text-accent uppercase">
                 Zlooyear
