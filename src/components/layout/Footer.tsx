@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { Logo } from "@/components/ui/Logo";
 import { FOOTER_SERVICES, NAV_LINKS, SITE } from "@/lib/constants";
 import { Github, Linkedin, Slack } from "lucide-react";
 
@@ -15,7 +15,13 @@ export function Footer() {
               className="inline-flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               aria-label={`${SITE.name} home`}
             >
-              <Logo />
+              <Image
+                src="/brand/logo-footer.png?v=4"
+                alt={SITE.name}
+                width={265}
+                height={255}
+                className="h-auto w-[265px] max-w-full object-contain"
+              />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {SITE.description}
