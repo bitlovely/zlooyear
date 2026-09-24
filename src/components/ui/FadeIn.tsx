@@ -3,14 +3,29 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+type FadeDirection = "up" | "left" | "right";
+
 type FadeInProps = {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  direction?: FadeDirection;
 };
 
-export function FadeIn({ children, className, delay = 0 }: FadeInProps) {
+const fadeOffset: Record<FadeDirection, { x?: number; y?: number }> = {
+  up: { y: 32 },
+  left: { x: -40, y: 12 },
+  right: { x: 40, y: 12 },
+};
+
+export function FadeIn({
+  children,
+  className,
+  delay = 0,
+  direction = "up",
+}: FadeInProps) {
   const prefersReducedMotion = useReducedMotion();
+  const offset = fadeOffset[direction];
 
   if (prefersReducedMotion) {
     return <div className={className}>{children}</div>;
@@ -18,10 +33,10 @@ export function FadeIn({ children, className, delay = 0 }: FadeInProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, ...offset }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}
@@ -42,12 +57,15 @@ export function StaggerItem({
   children,
   className,
   index = 0,
+  direction = "up",
 }: {
   children: React.ReactNode;
   className?: string;
   index?: number;
+  direction?: FadeDirection;
 }) {
   const prefersReducedMotion = useReducedMotion();
+  const offset = fadeOffset[direction];
 
   if (prefersReducedMotion) {
     return <div className={cn("h-full", className)}>{children}</div>;
@@ -55,12 +73,12 @@ export function StaggerItem({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
+      initial={{ opacity: 0, ...offset }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
       transition={{
-        duration: 0.45,
-        delay: index * 0.08,
+        duration: 0.55,
+        delay: 0.08 + index * 0.1,
         ease: [0.22, 1, 0.36, 1],
       }}
       className={cn("h-full", className)}

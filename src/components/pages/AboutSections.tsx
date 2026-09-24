@@ -61,7 +61,7 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
       >
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-start">
-            <FadeIn className="lg:col-span-5">
+            <FadeIn direction="left" className="lg:col-span-5">
               <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
                 Why We Exist
               </p>
@@ -70,7 +70,11 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
               </h2>
             </FadeIn>
 
-            <FadeIn delay={0.1} className="lg:col-span-6 lg:col-start-7 lg:pt-10">
+            <FadeIn
+              delay={0.12}
+              direction="right"
+              className="lg:col-span-6 lg:col-start-7 lg:pt-10"
+            >
               <p className="text-lg leading-relaxed text-muted-foreground text-pretty">
                 Zlooyear was founded on the belief that companies shouldn&apos;t
                 have to choose between technical depth and business
@@ -118,7 +122,7 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
       >
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-end">
-            <FadeIn className="lg:col-span-5">
+            <FadeIn direction="left" className="lg:col-span-5">
               <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
                 What We Believe
               </p>
@@ -126,7 +130,11 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
                 Principles that shape every engagement.
               </h2>
             </FadeIn>
-            <FadeIn delay={0.08} className="lg:col-span-5 lg:col-start-8">
+            <FadeIn
+              delay={0.1}
+              direction="right"
+              className="lg:col-span-5 lg:col-start-8"
+            >
               <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
                 Not slogans — working standards we use when tradeoffs get real.
               </p>
@@ -193,7 +201,7 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
       >
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-end">
-            <FadeIn className="lg:col-span-5">
+            <FadeIn direction="left" className="lg:col-span-5">
               <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
                 Our Approach
               </p>
@@ -201,7 +209,11 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
                 What sets our work apart.
               </h2>
             </FadeIn>
-            <FadeIn delay={0.08} className="lg:col-span-5 lg:col-start-8">
+            <FadeIn
+              delay={0.1}
+              direction="right"
+              className="lg:col-span-5 lg:col-start-8"
+            >
               <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
                 Four commitments we carry into every build — from first brief to
                 long-term iteration.

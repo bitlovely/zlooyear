@@ -10,7 +10,7 @@ export function AboutHero() {
       <section className="pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28 lg:min-h-[min(70vh,40rem)] lg:flex lg:items-center">
         <Container className="w-full">
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-            <FadeIn>
+            <FadeIn direction="left">
               <p className="text-sm font-bold tracking-[0.22em] text-accent uppercase">
                 Zlooyear
               </p>
@@ -27,7 +27,11 @@ export function AboutHero() {
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.12} className="flex justify-center lg:justify-end">
+            <FadeIn
+              delay={0.15}
+              direction="right"
+              className="flex justify-center lg:justify-end"
+            >
               <HeroSculpture />
             </FadeIn>
           </div>

@@ -15,7 +15,7 @@ export function HomePage() {
       <section className="border-t border-border bg-surface py-20 sm:py-28">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-start">
-            <FadeIn className="lg:col-span-5">
+            <FadeIn direction="left" className="lg:col-span-5">
               <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
                 Creative Technology
               </p>
@@ -27,10 +27,10 @@ export function HomePage() {
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.1} className="lg:col-span-6 lg:col-start-7 lg:pt-2">
+            <div className="lg:col-span-6 lg:col-start-7 lg:pt-2">
               <ul className="border-t border-border">
                 {creativeTechnology.offerings.map((offering, i) => (
-                  <StaggerItem key={offering} index={i}>
+                  <StaggerItem key={offering} index={i} direction="right">
                     <li className="flex gap-5 border-b border-border py-5 sm:gap-6 sm:py-6">
                       <span className="shrink-0 text-sm font-medium tracking-[0.14em] text-accent">
                         {String(i + 1).padStart(2, "0")}
@@ -42,7 +42,7 @@ export function HomePage() {
                   </StaggerItem>
                 ))}
               </ul>
-            </FadeIn>
+            </div>
           </div>
         </Container>
       </section>
