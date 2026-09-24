@@ -31,7 +31,7 @@ export function HeroCarousel() {
   return (
     <section className="relative overflow-hidden border-b border-border bg-background">
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(107,122,239,0.12),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(46,196,182,0.12),transparent_55%)]"
         aria-hidden="true"
       />
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24 lg:min-h-[40rem]">
