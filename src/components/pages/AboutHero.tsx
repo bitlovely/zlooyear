@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { TestimonialFlowBar } from "@/components/ui/TestimonialFlowBar";
 import { SITE } from "@/lib/constants";
@@ -28,14 +27,6 @@ export function AboutHero() {
             <p className="mt-5 max-w-2xl text-base font-medium text-foreground/80 italic sm:text-lg">
               {SITE.motto}
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Button href="/contact" size="lg">
-                Start a Project
-              </Button>
-              <Button href="/services" variant="secondary" size="lg">
-                Explore Our Services
-              </Button>
-            </div>
           </FadeIn>
         </Container>
       </section>
