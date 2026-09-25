@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/Container";
-import { FadeIn } from "@/components/ui/FadeIn";
+import { HeroHeadline } from "@/components/pages/HeroHeadline";
 import { TestimonialFlowBar } from "@/components/ui/TestimonialFlowBar";
 
 export function AboutHero() {
@@ -7,18 +7,15 @@ export function AboutHero() {
     <>
       <section className="relative -mt-14 overflow-hidden sm:-mt-16">
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_0%,rgba(61,142,245,0.1),transparent_50%),radial-gradient(ellipse_at_80%_90%,rgba(61,142,245,0.04),transparent_45%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(61,142,245,0.1),transparent_48%),radial-gradient(ellipse_at_85%_80%,rgba(61,142,245,0.045),transparent_42%)]"
           aria-hidden="true"
         />
 
         <div className="relative pt-14 sm:pt-16">
-          <Container className="relative flex min-h-[min(68vh,36rem)] items-center py-20 sm:py-24 lg:py-28">
-            <FadeIn direction="left" className="max-w-3xl">
-              <h1 className="text-[2.1rem] font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-[2.85rem] lg:leading-[1.15] text-balance">
-                We provide IT services that help businesses solve software
-                problems and build sustainable software infrastructure.
-              </h1>
-            </FadeIn>
+          <Container className="relative flex min-h-[min(72vh,40rem)] items-center py-20 sm:py-28 lg:py-32">
+            <div className="w-full py-4">
+              <HeroHeadline />
+            </div>
           </Container>
         </div>
       </section>
