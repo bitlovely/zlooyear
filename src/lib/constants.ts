@@ -11,16 +11,3 @@ export const SITE = {
   description:
     "Technology consulting and digital product development — modern websites, AI integration, and software engineering for businesses ready to grow.",
 } as const;
-
-export const FOOTER_NAV_LINKS = [
-  { label: "Work", href: "/case-studies" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
-] as const;
-
-export const FOOTER_SERVICES = [
-  { label: "Web Development", href: "/services/web-development" },
-  { label: "AI Integration", href: "/services/ai-integration" },
-  { label: "Software Consulting", href: "/services/software-consulting" },
-  { label: "Creative Technology", href: "/services/web-development#creative" },
-] as const;
