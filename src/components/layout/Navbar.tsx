@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { SITE } from "@/lib/constants";
@@ -40,9 +41,10 @@ export function Navbar() {
 
           <Link
             href="/contact"
-            className="text-[0.8125rem] font-medium tracking-wide text-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-muted hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            aria-label="Contact"
           >
-            Contact
+            <Mail className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.75} />
           </Link>
         </div>
       </Container>
