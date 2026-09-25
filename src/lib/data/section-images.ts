@@ -7,8 +7,4 @@ export const sectionImages = {
     src: "/sections/engineering.jpg",
     alt: "Circuit board and engineering systems",
   },
-  creative: {
-    src: "/sections/creative.jpg",
-    alt: "Creative technology studio with audio production gear",
-  },
 } as const;
