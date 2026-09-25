@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -47,23 +45,14 @@ export function HeroContent() {
           with confidence.
         </motion.p>
 
-        <motion.div
-          className="mt-9 flex flex-wrap items-center gap-4"
+        <motion.p
+          className="mt-9 text-sm text-muted-foreground"
           initial={reducedMotion ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: reducedMotion ? 0 : 0.22, ease }}
         >
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            Start a project
-            <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
-          </Link>
-          <p className="text-sm text-muted-foreground">
-            Engineering · AI · Digital products
-          </p>
-        </motion.div>
+          Engineering · AI · Digital products
+        </motion.p>
       </div>
 
       <motion.div
