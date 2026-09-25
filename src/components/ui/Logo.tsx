@@ -9,17 +9,17 @@ type LogoProps = {
 
 export function Logo({ className, priority = false }: LogoProps) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
+    <span className={cn("inline-flex items-center gap-2", className)}>
       <Image
         src="/brand/logo-mark.png?v=11"
         alt=""
-        width={36}
-        height={43}
-        className="h-9 w-auto object-contain sm:h-10"
+        width={28}
+        height={33}
+        className="h-7 w-auto object-contain"
         priority={priority}
       />
-      <span className="text-[0.95rem] font-bold tracking-[0.04em] text-foreground sm:text-lg">
-        ZLOOYEAR
+      <span className="text-[0.8125rem] font-semibold tracking-[0.12em] text-foreground uppercase">
+        Zlooyear
       </span>
       <span className="sr-only">{SITE.name}</span>
     </span>
