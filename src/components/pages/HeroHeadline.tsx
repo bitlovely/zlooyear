@@ -99,7 +99,7 @@ function OutcomeLine({
         aria-hidden="true"
       />
 
-      <span className="relative inline-block text-[1.55rem] font-semibold tracking-[-0.035em] text-foreground sm:text-3xl md:text-4xl lg:text-[2.65rem] lg:leading-[1.15]">
+      <span className="relative inline-block text-[1.55rem] font-semibold tracking-[-0.035em] text-accent sm:text-3xl md:text-4xl lg:text-[2.65rem] lg:leading-[1.15]">
         {words.map((word, wi) => (
           <motion.span
             key={`${word}-${wi}`}
@@ -115,10 +115,10 @@ function OutcomeLine({
             {word}
           </motion.span>
         ))}
-        <span>{isLast ? "." : ","}</span>
+        <span className="text-accent/70">{isLast ? "." : ","}</span>
 
         <motion.span
-          className="absolute inset-x-0 -bottom-0.5 h-[2px] origin-left bg-accent/70"
+          className="absolute inset-x-0 -bottom-0.5 h-px origin-left bg-accent/35"
           initial={reducedMotion ? false : { scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{
