@@ -16,20 +16,16 @@ type AboutSectionsProps = {
 
 export function AboutSections({ showIntro = true }: AboutSectionsProps) {
   // Alternate surface / default so bands stay even with or without the intro.
-  // Homepage (no intro): surface → default → surface → default
-  // About page (intro): intro surface → default → surface → default → surface
   const band = showIntro
     ? {
-        why: "",
-        believe: "bg-surface",
-        work: "",
-        approach: "bg-surface",
-      }
-    : {
-        why: "bg-surface",
         believe: "",
         work: "bg-surface",
         approach: "",
+      }
+    : {
+        believe: "bg-surface",
+        work: "",
+        approach: "bg-surface",
       };
 
   return (
@@ -58,65 +54,6 @@ export function AboutSections({ showIntro = true }: AboutSectionsProps) {
           </Container>
         </section>
       )}
-
-      {/* Why We Exist — split with future/tech visual */}
-      <section
-        className={cn(
-          "relative overflow-hidden border-t border-border",
-          band.why,
-        )}
-      >
-        <div className="grid lg:grid-cols-2 lg:min-h-[min(70vh,42rem)]">
-          <div className="relative flex items-center py-24 sm:py-32 lg:py-36">
-            <Container className="w-full lg:max-w-none lg:px-8 xl:pl-[max(2rem,calc((100vw-72rem)/2+2rem))] xl:pr-10">
-              <FadeIn direction="left" className="max-w-md">
-                <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
-                  Why We Exist
-                </p>
-                <h2 className="mt-5 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.6rem] lg:leading-[1.15] text-balance">
-                  Engineering depth. Business context.
-                </h2>
-                <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Companies shouldn&apos;t have to choose. We bridge both.
-                </p>
-
-                <div className="mt-10 flex gap-10">
-                  <div>
-                    <p className="text-xs font-medium tracking-[0.16em] text-accent uppercase">
-                      Depth
-                    </p>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      Systems that last
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium tracking-[0.16em] text-accent uppercase">
-                      Context
-                    </p>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      Decisions that fit
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
-            </Container>
-          </div>
-
-          <FadeIn
-            delay={0.12}
-            direction="right"
-            className="relative min-h-[22rem] sm:min-h-[28rem] lg:min-h-full"
-          >
-            <Image
-              src={sectionImages.why.src}
-              alt={sectionImages.why.alt}
-              fill
-              className="object-cover object-center"
-              sizes="(min-width: 1024px) 50vw, 100vw"
-            />
-          </FadeIn>
-        </div>
-      </section>
 
       <section
         className={cn(

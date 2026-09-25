@@ -14,7 +14,7 @@ export function HomePage() {
 
       <AboutSections showIntro={false} />
 
-      <section className="relative overflow-hidden border-t border-border bg-surface py-20 sm:py-28">
+      <section className="relative overflow-hidden border-t border-border py-20 sm:py-28">
         <SectionBackdrop
           src={sectionImages.creative.src}
           alt={sectionImages.creative.alt}

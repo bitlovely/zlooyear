@@ -1,8 +1,4 @@
 export const sectionImages = {
-  why: {
-    src: "/sections/future.jpg",
-    alt: "Earth from orbit — adapting to the technology of the next century",
-  },
   work: {
     src: "/sections/partnership.jpg",
     alt: "Team collaborating on digital products",
