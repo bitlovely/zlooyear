@@ -21,10 +21,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-[background-color,border-color] duration-300",
+        "sticky top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
         scrolled
-          ? "border-b border-border/60 bg-background/75 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent",
+          ? "border-b border-border/50 bg-background/80 backdrop-blur-md"
+          : "bg-transparent",
       )}
     >
       <Container as="nav" aria-label="Main navigation">
