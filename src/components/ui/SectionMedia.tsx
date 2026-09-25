@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 type SectionBackdropProps = {
   src: string;
   alt?: string;
-  /** Soft light wash so copy stays readable on light theme */
+  /** Soft wash so copy stays readable over photos */
   intensity?: "soft" | "strong";
   className?: string;
   priority?: boolean;
@@ -34,8 +34,8 @@ export function SectionBackdrop({
         className={cn(
           "absolute inset-0",
           intensity === "strong"
-            ? "bg-background/88"
-            : "bg-background/78",
+            ? "bg-background/90"
+            : "bg-background/82",
         )}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/55" />
