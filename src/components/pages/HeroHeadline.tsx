@@ -116,7 +116,7 @@ export function HeroBrandBackdrop({ className }: { className?: string }) {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_0%,rgba(59,130,246,0.18),transparent_42%),radial-gradient(ellipse_at_85%_20%,rgba(59,130,246,0.1),transparent_40%),radial-gradient(ellipse_at_50%_100%,rgba(59,130,246,0.06),transparent_45%)]" />
 
       <motion.p
-        className="absolute left-1/2 top-[48%] w-[170%] -translate-x-1/2 -translate-y-1/2 select-none text-center text-[clamp(5rem,26vw,20rem)] font-bold leading-none tracking-[-0.07em] text-foreground/[0.04]"
+        className="absolute left-1/2 top-[30%] w-[150%] max-w-none -translate-x-1/2 -translate-y-1/2 select-none text-center text-[clamp(4rem,20vw,15rem)] font-bold leading-none tracking-[-0.07em] text-foreground/[0.045] sm:top-[28%] sm:w-[140%] sm:tracking-[-0.075em]"
         initial={reducedMotion ? false : { opacity: 0 }}
         animate={
           reducedMotion
