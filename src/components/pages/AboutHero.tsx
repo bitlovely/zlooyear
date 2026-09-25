@@ -5,19 +5,16 @@ import { TestimonialFlowBar } from "@/components/ui/TestimonialFlowBar";
 export function AboutHero() {
   return (
     <>
-      <section className="relative -mt-14 overflow-hidden sm:-mt-16">
+      {/* Height = viewport minus navbar → menu + hero = one screen */}
+      <section className="relative flex min-h-[calc(100dvh-3.5rem)] items-center overflow-hidden sm:min-h-[calc(100dvh-4rem)]">
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(0,102,255,0.08),transparent_48%),radial-gradient(ellipse_at_85%_80%,rgba(0,102,255,0.035),transparent_42%)]"
+          className="pointer-events-none absolute inset-x-0 -top-14 bottom-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(0,102,255,0.08),transparent_48%),radial-gradient(ellipse_at_85%_80%,rgba(0,102,255,0.035),transparent_42%)] sm:-top-16"
           aria-hidden="true"
         />
 
-        <div className="relative pt-14 sm:pt-16">
-          <Container className="relative flex min-h-[min(72vh,40rem)] items-center py-20 sm:py-28 lg:py-32">
-            <div className="w-full py-4">
-              <HeroHeadline />
-            </div>
-          </Container>
-        </div>
+        <Container className="relative w-full py-8 sm:py-10">
+          <HeroHeadline />
+        </Container>
       </section>
 
       <TestimonialFlowBar />
