@@ -8,12 +8,15 @@ import { TestimonialFlowBar } from "@/components/ui/TestimonialFlowBar";
 export function AboutHero() {
   return (
     <>
-      <section className="relative flex min-h-[calc(100dvh-3.5rem)] items-center overflow-hidden sm:min-h-[calc(100dvh-4rem)]">
+      {/* Pull under sticky nav so menu + hero share one full-viewport field */}
+      <section className="relative -mt-14 flex min-h-dvh items-center overflow-x-hidden sm:-mt-16">
         <HeroBrandBackdrop />
 
-        <Container className="relative z-10 w-full py-8 sm:py-10">
-          <HeroHeadline />
-        </Container>
+        <div className="relative z-10 w-full pt-14 sm:pt-16">
+          <Container className="w-full py-8 sm:py-10">
+            <HeroHeadline />
+          </Container>
+        </div>
       </section>
 
       <TestimonialFlowBar />
