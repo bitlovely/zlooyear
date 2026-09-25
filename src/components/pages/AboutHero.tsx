@@ -7,7 +7,7 @@ export function AboutHero() {
     <>
       <section className="relative -mt-14 overflow-hidden sm:-mt-16">
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(61,142,245,0.1),transparent_48%),radial-gradient(ellipse_at_85%_80%,rgba(61,142,245,0.045),transparent_42%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(0,102,255,0.08),transparent_48%),radial-gradient(ellipse_at_85%_80%,rgba(0,102,255,0.035),transparent_42%)]"
           aria-hidden="true"
         />
 

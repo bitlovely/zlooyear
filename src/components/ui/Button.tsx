@@ -13,13 +13,13 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-accent text-white hover:bg-accent-hover shadow-sm focus-visible:ring-accent/40",
+    "bg-accent text-white hover:bg-accent-hover focus-visible:ring-accent/30",
   secondary:
-    "border border-border bg-muted/40 text-foreground hover:bg-muted hover:border-border-strong focus-visible:ring-foreground/20",
+    "border border-border bg-surface text-foreground hover:bg-muted focus-visible:ring-foreground/15",
   ghost:
-    "text-foreground hover:bg-muted focus-visible:ring-foreground/20",
+    "text-foreground hover:bg-muted focus-visible:ring-foreground/15",
   onDark:
-    "border border-border bg-transparent text-foreground hover:bg-muted hover:border-border-strong focus-visible:ring-accent/40",
+    "border border-border bg-transparent text-foreground hover:bg-muted focus-visible:ring-accent/30",
 };
 
 const sizes = {
