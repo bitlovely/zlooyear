@@ -12,9 +12,10 @@ export const SITE = {
     "Technology consulting and digital product development — modern websites, AI integration, and software engineering for businesses ready to grow.",
 } as const;
 
-export const NAV_LINKS = [
+export const FOOTER_NAV_LINKS = [
   { label: "Work", href: "/case-studies" },
   { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const FOOTER_SERVICES = [

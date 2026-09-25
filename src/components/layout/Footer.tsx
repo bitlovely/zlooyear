@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { FOOTER_SERVICES, NAV_LINKS, SITE } from "@/lib/constants";
+import { FOOTER_SERVICES, FOOTER_NAV_LINKS, SITE } from "@/lib/constants";
 import { Github, Linkedin, Slack } from "lucide-react";
 
 export function Footer() {
@@ -34,8 +34,7 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-foreground">Navigation</h3>
             <ul className="mt-4 space-y-3">
-              {NAV_LINKS.map(
-                (link) => (
+              {FOOTER_NAV_LINKS.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
@@ -44,8 +43,7 @@ export function Footer() {
                       {link.label}
                     </Link>
                   </li>
-                ),
-              )}
+                ))}
             </ul>
           </div>
 
