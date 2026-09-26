@@ -8,6 +8,8 @@ type TestimonialFlowBarProps = {
   className?: string;
 };
 
+const watermarkWords = Array.from({ length: 24 }, () => "zlooyear");
+
 export function TestimonialFlowBar({ className }: TestimonialFlowBarProps) {
   const reducedMotion = useReducedMotion();
   const items = [...testimonials, ...testimonials, ...testimonials];
@@ -15,23 +17,41 @@ export function TestimonialFlowBar({ className }: TestimonialFlowBarProps) {
   return (
     <div
       className={cn(
-        "relative overflow-hidden border-y border-zinc-200 bg-zinc-50 text-zinc-900",
+        "relative overflow-hidden border-y border-border/70 bg-surface",
         className,
       )}
       aria-label="Client feedback"
     >
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-zinc-50 to-transparent sm:w-28"
+        className="pointer-events-none absolute inset-0 z-0 flex flex-wrap content-center items-center justify-center gap-x-10 gap-y-3 px-4 opacity-[0.07] sm:gap-x-14 sm:gap-y-4"
+        aria-hidden="true"
+      >
+        {watermarkWords.map((word, index) => (
+          <span
+            key={`${word}-${index}`}
+            className={cn(
+              "select-none text-[0.7rem] font-bold tracking-[0.28em] text-foreground uppercase sm:text-xs",
+              index % 3 === 1 && "opacity-70",
+              index % 5 === 0 && "tracking-[0.4em]",
+            )}
+          >
+            {word}
+          </span>
+        ))}
+      </div>
+
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-surface to-transparent sm:w-28"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-zinc-50 to-transparent sm:w-28"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-surface to-transparent sm:w-28"
         aria-hidden="true"
       />
 
       <div
         className={cn(
-          "flex w-max items-center gap-12 py-4 sm:gap-16 sm:py-5",
+          "relative z-[1] flex w-max items-center gap-12 py-4 sm:gap-16 sm:py-5",
           !reducedMotion && "animate-marquee",
         )}
       >
@@ -40,10 +60,10 @@ export function TestimonialFlowBar({ className }: TestimonialFlowBarProps) {
             key={`${item.name}-${index}`}
             className="flex max-w-[min(34rem,78vw)] shrink-0 items-baseline gap-4"
           >
-            <blockquote className="text-sm leading-relaxed text-zinc-600 line-clamp-2 sm:text-[0.9375rem]">
+            <blockquote className="text-sm leading-relaxed text-muted-foreground line-clamp-2 sm:text-[0.9375rem]">
               “{item.quote}”
             </blockquote>
-            <figcaption className="shrink-0 text-[0.65rem] font-semibold tracking-[0.14em] text-blue-600 uppercase">
+            <figcaption className="shrink-0 text-[0.65rem] font-semibold tracking-[0.14em] text-accent uppercase">
               {item.name}
             </figcaption>
           </figure>
