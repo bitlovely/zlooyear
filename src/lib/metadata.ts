@@ -15,8 +15,8 @@ export function createMetadata({
   const url = `${SITE.url}${path}`;
   const fullTitle =
     path === "" || path === "/"
-      ? `${SITE.name} — ${SITE.tagline}`
-      : `${title} | ${SITE.name}`;
+      ? "Zlooyear - IT consulting"
+      : `${title} | Zlooyear`;
 
   return {
     title: fullTitle,
