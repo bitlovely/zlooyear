@@ -1,10 +1,103 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
+
+const ideaWords = ["Idea", "Idée", "Idee", "Ideia"];
+const productWords = ["Product", "Produit", "Produkt", "Produto"];
+
+function HeroEmphasizedWord({
+  words,
+  label,
+  delay = 0,
+  reducedMotion,
+}: {
+  words: string[];
+  label: string;
+  delay?: number;
+  reducedMotion: boolean | null;
+}) {
+  const [index, setIndex] = useState(0);
+  const longest = words.reduce((a, b) => (a.length >= b.length ? a : b));
+
+  useEffect(() => {
+    if (reducedMotion) return;
+
+    let intervalId = 0;
+    const startId = window.setTimeout(() => {
+      intervalId = window.setInterval(() => {
+        setIndex((current) => (current + 1) % words.length);
+      }, 2800);
+    }, Math.round(delay * 1000) + 900);
+
+    return () => {
+      window.clearTimeout(startId);
+      window.clearInterval(intervalId);
+    };
+  }, [delay, reducedMotion, words.length]);
+
+  return (
+    <span
+      className="relative inline-grid align-baseline"
+      aria-label={label}
+    >
+      <span
+        className="invisible col-start-1 row-start-1 font-semibold"
+        aria-hidden="true"
+      >
+        {longest}
+      </span>
+
+      <span className="relative col-start-1 row-start-1 h-[1.15em] overflow-hidden">
+        {reducedMotion ? (
+          <span className="bg-gradient-to-r from-accent via-sky-300 to-accent-hover bg-clip-text font-semibold text-transparent">
+            {words[0]}
+          </span>
+        ) : (
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={words[index]}
+              className="absolute inset-x-0 top-0 bg-gradient-to-r from-accent via-sky-300 to-accent-hover bg-clip-text font-semibold text-transparent"
+              initial={{ y: "110%", opacity: 0, filter: "blur(4px)" }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                filter: "blur(0px)",
+              }}
+              exit={{ y: "-110%", opacity: 0, filter: "blur(4px)" }}
+              transition={{ duration: 0.5, ease }}
+              aria-hidden="true"
+            >
+              {words[index]}
+            </motion.span>
+          </AnimatePresence>
+        )}
+
+        {!reducedMotion && (
+          <motion.span
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-center bg-gradient-to-r from-transparent via-accent/80 to-transparent"
+            initial={{ scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: [0.4, 0.95, 0.4] }}
+            transition={{
+              scaleX: { duration: 0.7, delay: delay + 0.2, ease },
+              opacity: {
+                duration: 2.8,
+                delay: delay + 0.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+            aria-hidden="true"
+          />
+        )}
+      </span>
+    </span>
+  );
+}
 
 /**
  * 2026 winning hero pattern for service brands:
@@ -31,7 +124,21 @@ export function HeroContent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: reducedMotion ? 0 : 0.06, ease }}
         >
-          From Idea to Product, Powered by AI
+          From{" "}
+          <HeroEmphasizedWord
+            words={ideaWords}
+            label="Idea"
+            delay={0.12}
+            reducedMotion={reducedMotion}
+          />{" "}
+          to{" "}
+          <HeroEmphasizedWord
+            words={productWords}
+            label="Product"
+            delay={0.22}
+            reducedMotion={reducedMotion}
+          />
+          , Powered by AI
         </motion.h1>
 
         <motion.p
