@@ -31,7 +31,7 @@ export function HeroContent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: reducedMotion ? 0 : 0.06, ease }}
         >
-          Turn complex tech into software that lasts.
+          From Idea to Product, Powered by AI
         </motion.h1>
 
         <motion.p
@@ -40,9 +40,8 @@ export function HeroContent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: reducedMotion ? 0 : 0.14, ease }}
         >
-          Zlooyear builds reliable systems, scalable infrastructure, and
-          sustainable digital solutions for businesses that need to move forward
-          with confidence.
+          We help businesses turn ideas into real, scalable software products —
+          from the ground up, using AI to build faster and work smarter.
         </motion.p>
 
         <motion.p
